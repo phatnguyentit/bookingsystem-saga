@@ -1,0 +1,47 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Gateway/">
+    <Project Path="src/Gateway/BookingSystem.ApiGateway/BookingSystem.ApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/src/Orchestration/">
+    <Project Path="src/Orchestration/BookingSystem.AppHost/BookingSystem.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/src/ServiceDefaults/">
+    <Project Path="src/ServiceDefaults/BookingSystem.ServiceDefaults/BookingSystem.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/BookingService/">
+    <Project Path="src/Services/BookingService/BookingSystem.BookingService.Api/BookingSystem.BookingService.Api.csproj" />
+    <Project Path="src/Services/BookingService/BookingSystem.BookingService.Application/BookingSystem.BookingService.Application.csproj" />
+    <Project Path="src/Services/BookingService/BookingSystem.BookingService.Domain/BookingSystem.BookingService.Domain.csproj" />
+    <Project Path="src/Services/BookingService/BookingSystem.BookingService.Infrastructure/BookingSystem.BookingService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/CatalogService/">
+    <Project Path="src/Services/CatalogService/BookingSystem.CatalogService.Api/BookingSystem.CatalogService.Api.csproj" />
+    <Project Path="src/Services/CatalogService/BookingSystem.CatalogService.Infrastructure/BookingSystem.CatalogService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/NotificationService/">
+    <Project Path="src/Services/NotificationService/BookingSystem.NotificationService.Api/BookingSystem.NotificationService.Api.csproj" />
+    <Project Path="src/Services/NotificationService/BookingSystem.NotificationService.Infrastructure/BookingSystem.NotificationService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/PaymentService/">
+    <Project Path="src/Services/PaymentService/BookingSystem.PaymentService.Api/BookingSystem.PaymentService.Api.csproj" />
+    <Project Path="src/Services/PaymentService/BookingSystem.PaymentService.Infrastructure/BookingSystem.PaymentService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/ReviewService/">
+    <Project Path="src/Services/ReviewService/BookingSystem.ReviewService.Api/BookingSystem.ReviewService.Api.csproj" />
+    <Project Path="src/Services/ReviewService/BookingSystem.ReviewService.Infrastructure/BookingSystem.ReviewService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/SearchService/">
+    <Project Path="src/Services/SearchService/BookingSystem.SearchService.Api/BookingSystem.SearchService.Api.csproj" />
+    <Project Path="src/Services/SearchService/BookingSystem.SearchService.Infrastructure/BookingSystem.SearchService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/UserService/">
+    <Project Path="src/Services/UserService/BookingSystem.UserService.Api/BookingSystem.UserService.Api.csproj" />
+    <Project Path="src/Services/UserService/BookingSystem.UserService.Infrastructure/BookingSystem.UserService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/BookingSystem.Shared.Contracts/BookingSystem.Shared.Contracts.csproj" />
+    <Project Path="src/Shared/BookingSystem.Shared.Messaging/BookingSystem.Shared.Messaging.csproj" />
+  </Folder>
+</Solution>

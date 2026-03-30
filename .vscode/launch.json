@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Aspire AppHost",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/Orchestration/BookingSystem.AppHost/bin/Debug/net10.0/BookingSystem.AppHost.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Orchestration/BookingSystem.AppHost",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  ]
+}

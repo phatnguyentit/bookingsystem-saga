@@ -1,0 +1,10 @@
+using BookingSystem.BookingService.Domain.ValueObjects;
+using MediatR;
+
+namespace BookingSystem.BookingService.Application.Commands.CreateBooking;
+
+public record CreateBookingCommand(
+    Guid UserId,
+    Guid ListingId,
+    DateOnly CheckIn,
+    DateOnly CheckOut) : IRequest<BookingId>;

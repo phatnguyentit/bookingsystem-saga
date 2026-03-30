@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../BookingSystem.BookingService.Domain/BookingSystem.BookingService.Domain.csproj" />
+    <ProjectReference Include="../../../Shared/BookingSystem.Shared.Contracts/BookingSystem.Shared.Contracts.csproj" />
+    <ProjectReference Include="../../../Shared/BookingSystem.Shared.Messaging/BookingSystem.Shared.Messaging.csproj" />
+  </ItemGroup>
+</Project>

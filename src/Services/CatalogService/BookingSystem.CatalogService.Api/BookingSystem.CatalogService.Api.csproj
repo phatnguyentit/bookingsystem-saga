@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.*" />
-    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.*" />
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.3.5" />
+    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.3.5" />
     <PackageReference Include="MediatR" Version="12.*" />
   </ItemGroup>
 

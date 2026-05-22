@@ -3,12 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookingSystem.CatalogService.Infrastructure.Repositories;
 
-public interface IListingRepository
-{
-    Task<Listing?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-    Task AddAsync(Listing listing, CancellationToken cancellationToken = default);
-}
-
 public class ListingRepository(CatalogDbContext db) : IListingRepository
 {
     public Task<Listing?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)

@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Elastic.Clients.Elasticsearch" Version="13.*" />
-    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.*" />
+    <PackageReference Include="Aspire.Elastic.Clients.Elasticsearch" Version="13.3.0" />
+    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.3.5" />
     <PackageReference Include="Confluent.Kafka" Version="2.*" />
     <PackageReference Include="MediatR" Version="12.*" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-namespace BookingSystem.BookingService.Application.Interfaces;
+namespace BookingSystem.BookingService.Application.Interfaces.UoW;
 
 public interface IUnitOfWork
 {

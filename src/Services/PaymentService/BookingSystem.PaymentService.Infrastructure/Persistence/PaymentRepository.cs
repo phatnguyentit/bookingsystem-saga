@@ -4,7 +4,7 @@ namespace BookingSystem.PaymentService.Infrastructure.Persistence;
 
 public class PaymentRepository(PaymentDbContext db) : IPaymentRepository
 {
-    public Task<Payment?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+    public Task<Payment?> GetByIdAsync(PaymentId id, CancellationToken cancellationToken = default)
         => db.Payments.FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
 
     public async Task AddAsync(Payment payment, CancellationToken cancellationToken = default)

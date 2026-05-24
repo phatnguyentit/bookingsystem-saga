@@ -19,7 +19,7 @@ public static class PaymentEndpoints
 
         group.MapGet("/{id:guid}", async (Guid id, IPaymentRepository repo) =>
         {
-            var payment = await repo.GetByIdAsync(id);
+            var payment = await repo.GetByIdAsync(new PaymentId(id));
             return payment is null ? Results.NotFound() : Results.Ok(payment);
         })
         .WithName("GetPayment");

@@ -4,7 +4,7 @@ namespace BookingSystem.PaymentService.Infrastructure.Persistence;
 
 public class Payment
 {
-    public Guid Id { get; set; }
+    public PaymentId Id { get; set; } = default!;
     public Guid BookingId { get; set; }
     public Guid UserId { get; set; }
     public decimal Amount { get; set; }
@@ -22,6 +22,8 @@ public class PaymentDbContext(DbContextOptions<PaymentDbContext> options) : DbCo
         mb.Entity<Payment>(e =>
         {
             e.HasKey(p => p.Id);
+            e.Property(p => p.Id)
+                .HasConversion(id => id.Value, v => new PaymentId(v));
             e.Property(p => p.Amount).HasColumnType("decimal(18,2)");
             e.Property(p => p.Currency).HasMaxLength(3);
             e.Property(p => p.Status).HasMaxLength(20);

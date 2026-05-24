@@ -1,0 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace BookingSystem.PaymentService.Infrastructure.Persistence;
+
+public class PaymentRepository(PaymentDbContext db) : IPaymentRepository
+{
+    public Task<Payment?> GetByIdAsync(PaymentId id, CancellationToken cancellationToken = default)
+        => db.Payments.FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
+
+    public async Task AddAsync(Payment payment, CancellationToken cancellationToken = default)
+    {
+        await db.Payments.AddAsync(payment, cancellationToken);
+        await db.SaveChangesAsync(cancellationToken);
+    }
+}

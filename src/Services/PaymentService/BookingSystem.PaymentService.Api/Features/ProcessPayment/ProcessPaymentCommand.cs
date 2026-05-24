@@ -21,7 +21,7 @@ public class ProcessPaymentHandler(
         // Simplified: real implementation would call a payment gateway
         var payment = new Payment
         {
-            Id = Guid.NewGuid(),
+            Id = PaymentId.New(),
             BookingId = cmd.BookingId,
             UserId = cmd.UserId,
             Amount = cmd.Amount,
@@ -34,13 +34,13 @@ public class ProcessPaymentHandler(
 
         await publisher.PublishAsync("payment.succeeded",
             new PaymentSucceededIntegrationEvent(
-                payment.Id,
+                payment.Id.Value,
                 payment.BookingId,
                 payment.UserId,
                 payment.Amount,
                 payment.Currency,
                 DateTime.UtcNow), cancellationToken);
 
-        return payment.Id;
+        return payment.Id.Value;
     }
 }

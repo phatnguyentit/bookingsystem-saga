@@ -30,7 +30,7 @@ public class Booking : AggregateRoot<BookingId>
             TotalPrice = totalPrice,
             Status = BookingStatus.Pending
         };
-        booking.AddDomainEvent(new BookingCreatedEvent(booking.Id, userId, listingId));
+        booking.AddDomainEvent(BookingCreatedEvent.Create(booking.Id, userId, listingId));
         return booking;
     }
 
@@ -39,7 +39,7 @@ public class Booking : AggregateRoot<BookingId>
         if (Status != BookingStatus.Pending)
             throw new BookingDomainException("Only pending bookings can be confirmed.");
         Status = BookingStatus.Confirmed;
-        AddDomainEvent(new BookingConfirmedEvent(Id));
+        AddDomainEvent(BookingConfirmedEvent.Create(Id));
     }
 
     public void Cancel(string reason)
@@ -47,7 +47,7 @@ public class Booking : AggregateRoot<BookingId>
         if (Status == BookingStatus.Cancelled)
             throw new BookingDomainException("Booking is already cancelled.");
         Status = BookingStatus.Cancelled;
-        AddDomainEvent(new BookingCancelledEvent(Id, reason));
+        AddDomainEvent(BookingCancelledEvent.Create(Id, reason));
     }
 
     public void Complete()

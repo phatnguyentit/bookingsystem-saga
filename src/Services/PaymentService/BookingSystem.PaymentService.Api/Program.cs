@@ -18,6 +18,8 @@ builder.Services.AddSingleton<IEventPublisher>(sp =>
     return new KafkaEventPublisher(bootstrapServers, logger);
 });
 
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();

@@ -1,5 +1,5 @@
 using BookingSystem.BookingService.Application.Exceptions;
-using BookingSystem.BookingService.Application.Interfaces;
+using BookingSystem.BookingService.Application.Interfaces.UoW;
 using BookingSystem.BookingService.Domain.Repositories;
 using BookingSystem.BookingService.Domain.ValueObjects;
 using MediatR;

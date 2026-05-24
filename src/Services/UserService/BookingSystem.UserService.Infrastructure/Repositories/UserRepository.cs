@@ -3,12 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookingSystem.UserService.Infrastructure.Repositories;
 
-public interface IUserRepository
-{
-    Task<User?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-    Task AddAsync(User user, CancellationToken cancellationToken = default);
-}
-
 public class UserRepository(UserDbContext db) : IUserRepository
 {
     public Task<User?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)

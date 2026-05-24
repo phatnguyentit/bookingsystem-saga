@@ -1,5 +1,6 @@
 using BookingSystem.BookingService.Application.Exceptions;
 using BookingSystem.BookingService.Application.Interfaces;
+using BookingSystem.BookingService.Application.Interfaces.UoW;
 using BookingSystem.BookingService.Domain;
 using BookingSystem.BookingService.Domain.Repositories;
 using BookingSystem.BookingService.Domain.ValueObjects;
@@ -35,6 +36,7 @@ public class CreateBookingHandler(
             totalPrice);
 
         await bookingRepo.AddAsync(booking, cancellationToken);
+        // Other repos (e.g. for availability) would be updated here as well
         await unitOfWork.CommitAsync(cancellationToken);
 
         return booking.Id;

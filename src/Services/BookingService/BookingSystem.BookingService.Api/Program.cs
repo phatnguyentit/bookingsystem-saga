@@ -1,9 +1,11 @@
 using BookingSystem.BookingService.Api.Endpoints;
 using BookingSystem.BookingService.Application.Commands.CreateBooking;
 using BookingSystem.BookingService.Application.Interfaces;
+using BookingSystem.BookingService.Application.Interfaces.UoW;
 using BookingSystem.BookingService.Domain.Repositories;
 using BookingSystem.BookingService.Infrastructure.HttpClients;
 using BookingSystem.BookingService.Infrastructure.Messaging;
+using BookingSystem.BookingService.Infrastructure.Outbox;
 using BookingSystem.BookingService.Infrastructure.Persistence;
 using BookingSystem.BookingService.Infrastructure.Repositories;
 using BookingSystem.ServiceDefaults;
@@ -23,6 +25,7 @@ builder.Services.AddMediatR(cfg =>
 
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddHostedService<OutboxProcessor>();
 
 builder.Services.AddHttpClient<ICatalogServiceClient, CatalogServiceClient>(
     c => c.BaseAddress = new Uri("http://catalog-service"));

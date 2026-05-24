@@ -10,6 +10,8 @@ builder.AddNpgsqlDbContext<ReviewDbContext>("reviewdb");
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();

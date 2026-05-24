@@ -1,4 +1,5 @@
 using BookingSystem.BookingService.Api.Endpoints;
+using Microsoft.EntityFrameworkCore;
 using BookingSystem.BookingService.Application.Commands.CreateBooking;
 using BookingSystem.BookingService.Application.Interfaces;
 using BookingSystem.BookingService.Application.Interfaces.UoW;
@@ -40,6 +41,12 @@ builder.Services.AddSingleton<IEventPublisher>(sp =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<BookingDbContext>();
+    await db.Database.MigrateAsync();
+}
 
 app.MapDefaultEndpoints();
 app.MapBookingEndpoints();

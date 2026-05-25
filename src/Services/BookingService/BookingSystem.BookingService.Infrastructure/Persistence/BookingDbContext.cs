@@ -17,8 +17,15 @@ public class BookingDbContext(DbContextOptions<BookingDbContext> options)
         {
             try
             {
-                await this.Database.MigrateAsync();
-                break;
+                if (!await this.Database.CanConnectAsync())
+                {
+                    throw new InvalidOperationException("Unable to connect to the database.");
+                }
+                else
+                {
+                    await this.Database.MigrateAsync();
+                    break;
+                }
             }
             catch (Exception ex) when (attempt < attempts)
             {

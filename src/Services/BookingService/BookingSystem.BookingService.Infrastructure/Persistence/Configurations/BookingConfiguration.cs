@@ -24,6 +24,8 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         {
             p.Property(x => x.CheckIn).HasColumnName("check_in");
             p.Property(x => x.CheckOut).HasColumnName("check_out");
+            p.HasIndex(x => x.CheckIn).HasDatabaseName("IX_bookings_check_in");
+            p.HasIndex(x => x.CheckOut).HasDatabaseName("IX_bookings_check_out");
         });
 
         builder.OwnsOne(b => b.TotalPrice, m =>
@@ -37,6 +39,8 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         builder.Property(b => b.Status)
             .HasConversion<string>()
             .HasMaxLength(20);
+
+        builder.HasIndex(b => b.Status).HasDatabaseName("IX_bookings_status");
 
         builder.ToTable("bookings");
     }

@@ -1,5 +1,5 @@
 using BookingSystem.BookingService.Api.Endpoints;
-using Microsoft.EntityFrameworkCore;
+using BookingSystem.Shared.Persistence;
 using BookingSystem.BookingService.Application.Commands.CreateBooking;
 using BookingSystem.BookingService.Application.Interfaces;
 using BookingSystem.BookingService.Application.Interfaces.UoW;

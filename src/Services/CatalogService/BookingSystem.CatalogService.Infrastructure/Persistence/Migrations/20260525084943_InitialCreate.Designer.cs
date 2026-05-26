@@ -56,7 +56,7 @@ namespace BookingSystem.CatalogService.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("listings", (string)null);
+                    b.ToTable("catalogs", (string)null);
                 });
 #pragma warning restore 612, 618
         }

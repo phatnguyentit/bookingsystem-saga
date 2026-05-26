@@ -12,7 +12,7 @@ namespace BookingSystem.CatalogService.Infrastructure.Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "listings",
+                name: "catalogs",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -25,7 +25,7 @@ namespace BookingSystem.CatalogService.Infrastructure.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_listings", x => x.Id);
+                    table.PrimaryKey("PK_catalogs", x => x.Id);
                 });
         }
 
@@ -33,7 +33,7 @@ namespace BookingSystem.CatalogService.Infrastructure.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "listings");
+                name: "catalogs");
         }
     }
 }

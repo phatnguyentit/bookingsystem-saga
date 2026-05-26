@@ -22,7 +22,7 @@ namespace BookingSystem.CatalogService.Infrastructure.Persistence.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("BookingSystem.CatalogService.Infrastructure.Persistence.Listing", b =>
+            modelBuilder.Entity("BookingSystem.CatalogService.Infrastructure.Persistence.Catalog", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace BookingSystem.CatalogService.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("listings", (string)null);
+                    b.ToTable("catalogs", (string)null);
                 });
 #pragma warning restore 612, 618
         }
